@@ -6,9 +6,10 @@ Altitude was recorded by the GPS and BARO sensors. The BARO sensor uses a zero a
 
 
 
-## DHT-11_Temp
+## DHT-11
 
-DHT-11 data was only recorded for 301 seconds of the total run
+DHT-11 data was only recorded for 301 seconds of the total run however when looking at the data we see a recorded range of 14.3 to 13.3 degrees Celsius looking at the link below for our time frame of testing from 2:00 P.M. to 3:00 P.M. we can say that the DHT-11 is fairly accurate in it's temperature readings. As far as humidity it appears to also be accurate to data found from weather stations.
+
 
 
 
