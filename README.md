@@ -1,32 +1,24 @@
-# Mars-Rover-Group-2
+# Mars Rover-Group 2
 
-## Altitude/Pressure
+## Sensor Findings
 
-Altitude was recorded by the GPS and BARO sensors. The BARO sensor uses a zero altitude position as the initial point and uses pressure changes to determine the altitude. This can be seen in the inverse relationship between its altitude and pressure readings. A source for the ground truth was found on calcmaps.com, which is linked below. Based on the rise and fall in altitude at the waypoints, it is evident the sensor's readings are not ideal. A possible reason for this relates to how the altitude uses the pressure readings. The day the test was conducted was windy, with infrequent gusts. It is possible the wind gusts could alter the air pressure in slight ways, and therefore could lead to inacurate readings. If readings on the wind speed were gathered, it may be possible to utilize Bernouli's principle and subtract the pressure caused by the wind, which would in turn lead to a more accurate altitude reading.
+All sensor data was gathered at 2:00 P.M. on Friday December 1st, 2023 at the parking lot of Ralph Korte Stadium in Edwardsville, Illinois. 
 
-The altitude from the GPS sensor is relative to sea level and is pulled from the GPS and mission planner software. When compared to the readings from calcmaps, the readings seem to be fairly off. One worthy note of detail is that the initial altitude seems to be very high, before it suddenly drops down. It is possible this is due to the sensor still finding its position. During the initial start up of the rover, ten to twenty minutes were used to let the GPS find itself. On mission planner, this was visible by the rover seemingly jumping from place to even though it was stationary. It is possibly that because the rover was turned on, it was armed, and its pathing was initialezed within seconds of each other, that the GPS was still finding itsself. In future tests, it may be possible to prevent this by giving the rover a minimum of five minutes between start-up and initalizing.  
+### GPS Altitude
 
+The altitude from the GPS sensor is relative to sea level and is pulled from the GPS and mission planner software. When compared to the readings from [calcmaps](https://www.calcmaps.com/map-elevation/), the readings seem to be fairly off. One worthy note of detail is that the initial altitude seems to be very high, before it suddenly drops down. It is possible this is due to the sensor still finding its position. During the initial start up of the rover, ten to twenty minutes were used to let the GPS find itself. On mission planner, this was visible by the rover seemingly jumping from place to even though it was stationary. It is possibly that because the rover was turned on, it was armed, and its pathing was initialezed within seconds of each other, that the GPS was still finding itsself. In future tests, it may be possible to prevent this by giving the rover a minimum of five minutes between start-up and initalizing.  
 
+### BARO Altitude and Pressure
 
-## DHT-11
+Altitude was recorded by the GPS and BARO sensors. The BARO sensor uses a zero altitude position as the initial point and uses pressure changes to determine the altitude. This can be seen in the inverse relationship between its altitude and pressure readings. A source for the ground truth was found on calcmaps.com, which is linked below. Based on the rise and fall in altitude between the waypoints compared to that from calcmaps, it is evident the sensor's readings are close, but not acurate. A possible reason for this relates to how the altitude uses the pressure readings. The day the test was conducted was windy, with infrequent gusts. It is possible the wind gusts could alter the air pressure in slight ways, and therefore could lead to inacurate readings. If readings on the wind speed were gathered, it may be possible to utilize Bernouli's principle and subtract the pressure caused by the wind, which would in turn lead to a more accurate altitude reading.
 
-DHT-11 data was only recorded for 301 seconds of the total run however when looking at the data we see a recorded range of 14.3 to 13.3 degrees Celsius looking at the link below for our time frame of testing from 2:00 P.M. to 3:00 P.M. we can say that the DHT-11 is fairly accurate in it's temperature readings. As far as humidity it appears to also be accurate to data found from [weather stations](https://www.localconditions.com/weather-edwardsville-illinois/62025/past.php).
+### DHT-11
 
+DHT-11 data was only recorded for 301 seconds of the total run. When looking at the data, we see a recorded range of 14.3 to 13.3 degrees Celsius. From the following [link](https://www.visualcrossing.com/weather/weather-data-services/Edwardsville,%20Il/metric/2023-12-01/2023-12-01#), for temperature in the area during the time frame of testing from 2:00 P.M. to 3:00 P.M., a ground value of 13 degrees celsius can be used. From this, we can say that the DHT-11 is fairly accurate in it's temperature readings. As far as humidity, it appears to also be accurate to data found from [weather stations](https://www.localconditions.com/weather-edwardsville-illinois/62025/past.php). A potential way to improve this already functional sensor would be to utilize a second DHT-11 sensor placed in another location outside the rover so two values for temperature can be recorded and averaged.
 
+### BARO and IMU Temperature 
 
-
-## BARO/IMU_Temp 
-
-The BARO temperature sensor like the DHT-11 senses the surrounding ambient temperature however since the BARO is in close proximity to the IMU you notice that the IMU temperature and Baro temperature are practically overlapping with each other. To deal with this discrepancy you should program the software of your navio to subtract the IMU temperature from your BARO and affect the hardware of your system so the BARO has better access to notice the ambient temperature instead of being insulated in the rover.
-
-## Links for accuracy 
-Humidity link (https://www.localconditions.com/weather-edwardsville-illinois/62025/past.php) Look for Fri December 1
-
-Temperature and Pressure link note pressure is in millibar and needs conversion to pascals look for the 2 pm value (https://www.visualcrossing.com/weather/weather-data-services/Edwardsville,%20Il/metric/2023-12-01/2023-12-01#)
-
-Calcmaps link to find accurate altitude  (https://www.calcmaps.com/map-elevation/)
-
-
+The BARO temperature sensor, like the DHT-11, senses the surrounding ambient temperature; however, since the BARO is in close proximity to the IMU, you notice that the IMU temperature and Baro temperature are practically overlapping with each other. To deal with this discrepancy, you should program the software of your navio to subtract the IMU temperature from your BARO and affect the hardware of your system so the BARO has better access to notice the ambient temperature instead of being insulated in the rover.
 
 ## Waypoints
 
